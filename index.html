@@ -1,1 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SIGHT Lab</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+    }
 
+    header {
+      background-color: #222;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      font-size: 28px;
+    }
+
+    nav {
+      background-color: #444;
+      padding: 10px;
+      text-align: center;
+    }
+
+    nav button {
+      margin: 5px;
+      padding: 10px 15px;
+      border: none;
+      background-color: #ddd;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    nav button:hover {
+      background-color: #bbb;
+    }
+
+    section {
+      padding: 20px;
+      display: none;
+    }
+
+    section.active {
+      display: block;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  SIGHT Lab
+</header>
+
+<nav>
+  <button onclick="showSection('members')">Lab Members</button>
+  <button onclick="showSection('projects')">Projects</button>
+  <button onclick="showSection('publications')">Publications</button>
+  <button onclick="showSection('collaboration')">Collaboration</button>
+  <button onclick="showSection('contact')">Contact</button>
+</nav>
+
+<section id="members" class="active">
+  <h2>Lab Members</h2>
+  <p>Add your team details here.</p>
+</section>
+
+<section id="projects">
+  <h2>Projects</h2>
+  <p>Describe your projects.</p>
+</section>
+
+<section id="publications">
+  <h2>Publications</h2>
+  <p>List your papers here.</p>
+</section>
+
+<section id="collaboration">
+  <h2>Collaboration</h2>
+  <p>Describe collaboration opportunities.</p>
+</section>
+
+<section id="contact">
+  <h2>Contact</h2>
+  <p>Email: your@email.com</p>
+</section>
+
+<script>
+  function showSection(id) {
+    const sections = document.querySelectorAll("section");
+    sections.forEach(sec => sec.classList.remove("active"));
+
+    document.getElementById(id).classList.add("active");
+  }
+</script>
+
+</body>
+</html>
